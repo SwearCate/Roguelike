@@ -79,3 +79,4 @@ Assets/Temp/*
 Assets/StreamingAssets/PerformanceTestRunInfo.json*
 Assets/InitTestScene*.unity*
 Assets/Heureka.meta
+ProjectSettings/ShaderGraphSettings.asset

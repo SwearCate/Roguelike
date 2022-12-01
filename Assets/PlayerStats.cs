@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyRecieveDamage : MonoBehaviour
+public class PlayerStats : MonoBehaviour
 {
+    public static PlayerStats playerStats;
+
+    public GameObject player;
 
     public float health;
     public float maxHealth;
@@ -28,7 +30,7 @@ public class EnemyRecieveDamage : MonoBehaviour
 
     private void CheckOverheal()
     {
-        if(health > maxHealth)
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
@@ -36,11 +38,9 @@ public class EnemyRecieveDamage : MonoBehaviour
 
     private void CheckDeath()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(player);
         }
     }
-
-
 }
