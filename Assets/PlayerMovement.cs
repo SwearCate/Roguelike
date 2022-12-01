@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             direction += Vector2.down;
-          
         }
         if (Input.GetKey(KeyCode.D))
         {
