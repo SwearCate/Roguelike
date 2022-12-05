@@ -11,6 +11,20 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public float maxHealth;
 
+    void Awake()
+    {
+        if(playerStats != null)
+        {
+            Destroy(playerStats);
+        }
+        else
+        {
+            playerStats = this;
+        }
+
+        DontDestroyOnLoad(this);
+    }
+
     private void Start()
     {
         health = maxHealth;
