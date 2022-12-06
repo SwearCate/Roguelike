@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats playerStats;
 
     public GameObject player;
+    public Text healthText;
+    public Slider healthSlider;
 
     public float health;
     public float maxHealth;
 
     void Awake()
     {
-        if(playerStats != null)
+        if (playerStats != null)
         {
             Destroy(playerStats);
         }
@@ -28,18 +31,27 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+       
     }
 
     public void DealDamage(float damage)
     {
         health -= damage;
         CheckDeath();
+       
     }
 
     public void HealCharacter(float heal)
     {
         health += heal;
         CheckOverheal();
+       
+    }
+
+    private void SetHealthUI()
+    {
+        healthSlider.value = CalculateHealthPercentage();
+        healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
     }
 
     private void CheckOverheal()
@@ -56,5 +68,10 @@ public class PlayerStats : MonoBehaviour
         {
             Destroy(player);
         }
+    }
+
+    float CalculateHealthPercentage()
+    {
+        return health / maxHealth;
     }
 }
