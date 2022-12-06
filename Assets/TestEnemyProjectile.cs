@@ -1,24 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-internal class TestEnemyProjectile
-{
-    public float damage;
-}
-public class TestEnemy : MonoBehaviour
+
+public class TestEnemyProjectile : MonoBehaviour
 {
     public float damage;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag != "Enemy")
+        if (collision.name != "Enemy")
         {
-            if (collision.tag == "Player")
-            {
-                PlayerStats.playerStats.DealDamage(damage);
-            }
-
-            Destroy(gameObject);
+            Destroy(gameObject); // Unichtozhenie
         }
     }
 }

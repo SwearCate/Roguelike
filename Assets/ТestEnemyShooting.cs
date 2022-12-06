@@ -5,7 +5,7 @@ using UnityEngine;
 public class ТestEnemyShooting : MonoBehaviour
 {
     public GameObject projectile;
-    public Transform player;
+    public Transform Player;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
@@ -19,18 +19,18 @@ public class ТestEnemyShooting : MonoBehaviour
 
     IEnumerator ShootPlayer()
     {
-        yield return (WaitForSeconds(cooldown));
-        if (player != null)
+        yield return new WaitForSeconds(cooldown);
+        if (Player != null)
         {
             GameObject spell = Instantiate(projectile, transform.position, Quaternion.identity);
             Vector2 myPos = transform.position;
-            Vector2 targetPos = player.position;
+            Vector2 targetPos = Player.position;
             Vector2 direction = (targetPos - myPos).normalized;
             spell.GetComponent<Rigidbody2D>().velocity = direction * projectileForce;
             spell.GetComponent<TestEnemyProjectile>().damage = Random.Range(minDamage, maxDamage);
             StartCoroutine(ShootPlayer());
-
         }
+
     }
 
     private object WaitForSeconds(int cooldown)
