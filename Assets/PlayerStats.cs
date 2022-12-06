@@ -48,6 +48,11 @@ public class PlayerStats : MonoBehaviour
         SetHealthUI();
     }
 
+    float CalculateHealthPercentage()
+    {
+        return health / maxHealth;
+    }
+
     private void SetHealthUI()
     {
         healthSlider.value = CalculateHealthPercentage();
@@ -70,8 +75,4 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    float CalculateHealthPercentage()
-    {
-        return health / maxHealth;
-    }
 }
