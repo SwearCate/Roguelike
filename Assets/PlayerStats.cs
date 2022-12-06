@@ -31,21 +31,21 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-       
+        SetHealthUI();
     }
 
     public void DealDamage(float damage)
     {
         health -= damage;
         CheckDeath();
-       
+        SetHealthUI();
     }
 
     public void HealCharacter(float heal)
     {
         health += heal;
         CheckOverheal();
-       
+        SetHealthUI();
     }
 
     private void SetHealthUI()
