@@ -10,6 +10,9 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
     public Text healthText;
     public Slider healthSlider;
+    public Text collectedText;
+    public static int collectedAmount = 0;
+
 
     public float health;
     public float maxHealth;
@@ -34,6 +37,10 @@ public class PlayerStats : MonoBehaviour
         SetHealthUI();
     }
 
+    void Update()
+    {
+        collectedText.text = "Items Collected" + collectedAmount;
+    }
     public void DealDamage(float damage)
     {
         health -= damage;
