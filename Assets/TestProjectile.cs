@@ -9,7 +9,7 @@ public class TestProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.name != "Player")
+        if(!(collision.name == "Player" || collision.tag == "Projectile"))
         {
             if(collision.GetComponent<EnemyRecieveDamage>() != null)
             {
