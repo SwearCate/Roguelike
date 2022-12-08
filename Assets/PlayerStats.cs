@@ -37,10 +37,7 @@ public class PlayerStats : MonoBehaviour
         SetHealthUI();
     }
 
-    void Update()
-    {
-        collectedText.text = "Items Collected" + collectedAmount;
-    }
+
     public void DealDamage(float damage)
     {
         health -= damage;
