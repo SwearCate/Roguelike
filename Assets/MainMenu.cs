@@ -7,7 +7,9 @@ public class MainMenu : MonoBehaviour
 {
 
     public GameObject settingsPanel;
-   public void StartGame() 
+    public GameObject ExitPanel;
+
+    public void StartGame() 
     {
         SceneManager.LoadScene(1);
 
@@ -27,5 +29,17 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void OpenExit()
+    {
+        ExitPanel.SetActive(true);
+
+    }
+
+    public void CloseExit()
+    {
+        ExitPanel.SetActive(false);
+
     }
 }
