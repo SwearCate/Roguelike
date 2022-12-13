@@ -7,6 +7,7 @@ public class PAUSE : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+    public GameObject Player;
 
     void Update()
     {
@@ -42,6 +43,8 @@ public class PAUSE : MonoBehaviour
         Debug.Log("Load");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        Destroy(Player);
+        
     }
 
     public void QuitGame()
