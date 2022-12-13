@@ -11,6 +11,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     public float maxHealth;
     public GameObject healthBar;
     public Slider healthBarSlider;
+    public GameObject coin;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     {
         if(health <= 0)
         {
+            GameObject.Instantiate(coin);
             Destroy(gameObject);
         }
     }
