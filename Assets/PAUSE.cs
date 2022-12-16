@@ -43,6 +43,7 @@ public class PAUSE : MonoBehaviour
         Debug.Log("Load");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        Player = GameObject.FindGameObjectWithTag("Player");
         Destroy(Player);
         
     }
