@@ -12,10 +12,12 @@ public class EnemyRecieveDamage : MonoBehaviour
     public GameObject healthBar;
     public Slider healthBarSlider;
     public GameObject coin;
+    private GameObject Player;
 
     private void Start()
     {
         health = maxHealth;
+        Player = GameObject.Find("Player");
     }
 
     public void DealDamage(float damage)
@@ -45,7 +47,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     {
         if(health <= 0)
         {
-            GameObject.Instantiate(coin);
+            Instantiate(coin, Player.transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

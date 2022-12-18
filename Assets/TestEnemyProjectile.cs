@@ -10,7 +10,7 @@ public class TestEnemyProjectile : MonoBehaviour
     {
         if (collision.name != "Enemy")
         {
-            Destroy(gameObject); // Unichtozhenie
+            Destroy(gameObject);
         }
     }
 }
