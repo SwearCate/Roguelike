@@ -13,6 +13,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     public Slider healthBarSlider;
     public GameObject coin;
     private GameObject Player;
+    private GameObject Boss;
 
     private void Start()
     {
