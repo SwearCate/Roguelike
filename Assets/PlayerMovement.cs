@@ -10,14 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Vector2 direction;
     private Animator animator;
+    private Rigidbody2D rb;
+    private TrailRenderer tr;
     private enum Facing {UP, DOWN, LEFT, RIGHT};
     private Facing FacingDir = Facing.LEFT;
 
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        speed = 2;
+        speed = 30;
     }
 
 
@@ -30,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(speed * Time.deltaTime * direction);
+        this.rb.MovePosition(this.rb.position + (direction * speed * Time.deltaTime));
         SetAnimatorMovement(direction);
     }
 
@@ -61,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Vector2 currentPos = transform.position;
+            Vector2 currentPos = rb.position;
             targetPos = Vector2.zero;
 
             if (FacingDir == Facing.UP)
@@ -81,9 +84,8 @@ public class PlayerMovement : MonoBehaviour
                 targetPos.x = 1;
             }
 
-            transform.Translate(targetPos * dashRange);
+            rb.AddForce(targetPos * dashRange);
         }
-
     }
 
 
