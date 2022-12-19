@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        speed = 30;
+        speed = 8;
     }
 
 
