@@ -5,7 +5,7 @@ using UnityEngine;
 public class ТestEnemyShooting : MonoBehaviour
 {
     public GameObject projectile;
-    public Transform Player;
+    private Transform Player;
     public float minDamage;
     public float maxDamage;
     public float projectileForce;
@@ -14,6 +14,7 @@ public class ТestEnemyShooting : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(ShootPlayer());
     }
 

@@ -8,7 +8,7 @@ public class TestEnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name != "Enemy")
+        if (collision.tag != "Enemy")
         {
             Destroy(gameObject);
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,10 +35,15 @@ public class projectile : MonoBehaviour
         {
             DestroyProjectile();
         }
+        if (!other.CompareTag("obstacle"))
+        {
+            DestroyProjectile();
+        }
     }
 
     void DestroyProjectile()
     {
         Destroy(gameObject);
+        Console.WriteLine("Destroyed");
     }
 }
