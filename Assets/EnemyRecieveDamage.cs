@@ -14,11 +14,13 @@ public class EnemyRecieveDamage : MonoBehaviour
     public GameObject coin;
     private GameObject Player;
     private GameObject Boss;
+    public GameObject Portal;
 
     private void Start()
     {
         health = maxHealth;
         Player = GameObject.Find("Player");
+        Boss = GameObject.Find("Boss");
     }
 
     public void DealDamage(float damage)
@@ -57,4 +59,5 @@ public class EnemyRecieveDamage : MonoBehaviour
     {
         return (health / maxHealth);
     }
+
 }
