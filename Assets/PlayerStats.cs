@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour
     public GameObject player;
     public Text healthText;
     public Slider healthSlider;
-    public Text collectedText;
     public static int collectedAmount = 0;
 
 
