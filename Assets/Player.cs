@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+   public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(player);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

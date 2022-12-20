@@ -19,7 +19,7 @@ public class TestProjectile : MonoBehaviour
             {
                 collision.GetComponent<BossRecieveDamage>().DealDamage(damage);
             }
-            Destroy(gameObject); // Unichtozhenie
+            Destroy(gameObject);
         }
     }
 }

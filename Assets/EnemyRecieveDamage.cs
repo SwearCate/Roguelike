@@ -14,7 +14,6 @@ public class EnemyRecieveDamage : MonoBehaviour
     public GameObject coin;
     private GameObject Player;
     private GameObject Boss;
-    public GameObject Portal;
 
     private void Start()
     {

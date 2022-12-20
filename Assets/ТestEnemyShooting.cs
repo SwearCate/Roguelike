@@ -6,8 +6,8 @@ public class ТestEnemyShooting : MonoBehaviour
 {
     public GameObject projectile;
     private Transform Player;
-    public float minDamage;
-    public float maxDamage;
+    public int minDamage;
+    public int maxDamage;
     public float projectileForce;
     public int cooldown;
 

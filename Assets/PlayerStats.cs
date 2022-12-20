@@ -8,8 +8,6 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats playerStats;
 
     public GameObject player;
-    public Text healthText;
-    public Slider healthSlider;
     public static int collectedAmount = 0;
 
 
@@ -33,7 +31,6 @@ public class PlayerStats : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
-        SetHealthUI();
     }
 
 
@@ -41,14 +38,13 @@ public class PlayerStats : MonoBehaviour
     {
         health -= damage;
         CheckDeath();
-        SetHealthUI();
+
     }
 
     public void HealCharacter(float heal)
     {
         health += heal;
         CheckOverheal();
-        SetHealthUI();
     }
 
     float CalculateHealthPercentage()
@@ -56,11 +52,7 @@ public class PlayerStats : MonoBehaviour
         return health / maxHealth;
     }
 
-    private void SetHealthUI()
-    {
-        healthSlider.value = CalculateHealthPercentage();
-        healthText.text = Mathf.Ceil(health).ToString() + " / " + Mathf.Ceil(maxHealth).ToString();
-    }
+  
 
     private void CheckOverheal()
     {
