@@ -18,14 +18,6 @@ public class Player : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.C))
-        {
-            TakeDamage(20);
-        }
-    }
-
    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
