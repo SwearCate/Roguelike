@@ -15,6 +15,7 @@ public class EnemyRecieveDamage : MonoBehaviour
     private GameObject Player;
     private GameObject Boss;
 
+
     private void Start()
     {
         health = maxHealth;
